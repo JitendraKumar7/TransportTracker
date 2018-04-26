@@ -16,8 +16,8 @@ public class TrackerActivity extends AppCompatActivity {
     private static final int PERMISSIONS_REQUEST = 1;
 
     private void startTrackerService() {
-        //startService(new Intent(this, TrackerService.class));
-        //finish();
+        startService(new Intent(this, TrackerService.class));
+        finish();
     }
 
     @Override
