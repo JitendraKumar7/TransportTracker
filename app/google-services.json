@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "112540452608",
+    "firebase_url": "https://transporttracker-4c45b.firebaseio.com",
+    "project_id": "transporttracker-4c45b",
+    "storage_bucket": "transporttracker-4c45b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112540452608:android:a1abcb58d039bb86",
+        "android_client_info": {
+          "package_name": "com.transport.tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112540452608-oh0v4qd2dahtr6ob1695glh945s1dvg2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.transport.tracker",
+            "certificate_hash": "c4805feec0b134c54c1c712ff158569c255dc59b"
+          }
+        },
+        {
+          "client_id": "112540452608-l8oq49e9d3tl9gmm32apaara0gf1ksbc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnrbLGqrA336I_iwAYiorHeFGWxeEpC-E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112540452608-l8oq49e9d3tl9gmm32apaara0gf1ksbc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
