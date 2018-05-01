@@ -197,8 +197,4 @@ public class ActivityChatDetails extends AppCompatActivity {
         }
     };
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
 }

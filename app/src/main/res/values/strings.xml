@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Transport Tracker</string>
+    <string name="app_name">FCM Chat</string>
     <string name="notification_text">Tracking, tap to cancel</string>
     <string name="transport_id" translatable="false">123</string>
     <string name="firebase_path" translatable="false">locations</string>

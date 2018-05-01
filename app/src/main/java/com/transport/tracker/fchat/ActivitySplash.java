@@ -36,8 +36,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class ActivitySplash extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener,
-        View.OnClickListener {
+public class ActivitySplash extends AppCompatActivity implements
+        GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
 
     private static final int RC_SIGN_IN = 100;
     private SignInButton signInButton;
@@ -63,10 +63,12 @@ public class ActivitySplash extends AppCompatActivity implements GoogleApiClient
         // Set click listeners
         signInButton.setOnClickListener(this);
 
+        // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
+
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
@@ -203,7 +205,7 @@ public class ActivitySplash extends AppCompatActivity implements GoogleApiClient
                         if (!task.isSuccessful()) {
                             Snackbar.make(getWindow().getDecorView(), "Authentication failed.", Snackbar.LENGTH_LONG).show();
                         } else {
-                            ref=FirebaseDatabase.getInstance().getReference(USERS_CHILD);
+                            ref = FirebaseDatabase.getInstance().getReference(USERS_CHILD);
                             ref.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(DataSnapshot snapshot) {
@@ -240,4 +242,5 @@ public class ActivitySplash extends AppCompatActivity implements GoogleApiClient
         // be available.
         Snackbar.make(getWindow().getDecorView(), "Google Play Services error.", Snackbar.LENGTH_LONG).show();
     }
+
 }

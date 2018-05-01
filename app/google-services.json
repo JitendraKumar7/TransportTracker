@@ -15,7 +15,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "112540452608-oh0v4qd2dahtr6ob1695glh945s1dvg2.apps.googleusercontent.com",
+          "client_id": "112540452608-6b4bm48fgph5s5isab0kgqgctmkk3ff1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.transport.tracker",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "112540452608-l8oq49e9d3tl9gmm32apaara0gf1ksbc.apps.googleusercontent.com",
+          "client_id": "112540452608-4ufki6d353lctlcksjvss9bsk26qcf5u.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDnrbLGqrA336I_iwAYiorHeFGWxeEpC-E"
+          "current_key": "AIzaSyA3z1Z8jd8dRSx4GH3rw7j_k3EG85WZ_bM"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "112540452608-l8oq49e9d3tl9gmm32apaara0gf1ksbc.apps.googleusercontent.com",
+              "client_id": "112540452608-4ufki6d353lctlcksjvss9bsk26qcf5u.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
