@@ -27,6 +27,7 @@ import com.transport.tracker.fchat.fragment.ChatsFragment;
 import com.google.android.gms.auth.api.Auth;
 
 public class ActivityMain extends AppCompatActivity {
+
     private Toolbar toolbar;
     public FloatingActionButton fab;
 
@@ -44,7 +45,7 @@ public class ActivityMain extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i =new Intent(ActivityMain.this,ActivitySelectFriend.class);
+                Intent i = new Intent(ActivityMain.this, ActivitySelectFriend.class);
                 startActivity(i);
             }
         });
@@ -85,8 +86,8 @@ public class ActivityMain extends AppCompatActivity {
         int id = item.getItemId();
         switch (id) {
             case R.id.action_logout: {
-                Intent logoutIntent=new Intent(this,ActivitySplash.class);
-                logoutIntent.putExtra("mode","logout");
+                Intent logoutIntent = new Intent(this, ActivitySplash.class);
+                logoutIntent.putExtra("mode", "logout");
                 startActivity(logoutIntent);
                 finish();
                 return true;

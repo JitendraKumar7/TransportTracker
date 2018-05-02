@@ -41,13 +41,13 @@ public class ActivitySelectFriend extends AppCompatActivity {
     public static final String USERS_CHILD = "users";
     ParseFirebaseData pfbd;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_new_chat);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_new_chat);
         initToolbar();
         initComponent();
-        friendList=new ArrayList<>();
+        friendList = new ArrayList<>();
         pfbd = new ParseFirebaseData(this);
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference(USERS_CHILD);
@@ -71,7 +71,7 @@ public class ActivitySelectFriend extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                    Snackbar.make(getWindow().getDecorView(), "Could not connect", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(getWindow().getDecorView(), "Could not connect", Snackbar.LENGTH_LONG).show();
             }
         });
 
@@ -83,15 +83,15 @@ public class ActivitySelectFriend extends AppCompatActivity {
 
     private void initComponent() {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        
+
         // use a linear layout manager
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
-		recyclerView.setHasFixedSize(true);
+        recyclerView.setHasFixedSize(true);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
     }
 
-    public void initToolbar(){
+    public void initToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();

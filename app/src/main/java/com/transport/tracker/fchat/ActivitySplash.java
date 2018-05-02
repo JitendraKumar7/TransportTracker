@@ -184,28 +184,14 @@ public class ActivitySplash extends AppCompatActivity implements
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-            Log.e("JKS", result.getStatus().getStatusMessage());
             if (result.isSuccess()) {
                 signInButton.setVisibility(View.GONE);
                 loginProgress.setVisibility(View.VISIBLE);
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
-                //firebaseAuthWithGoogle(account);
+                firebaseAuthWithGoogle(account);
             } else {
                 Snackbar.make(getWindow().getDecorView(), "Login failed", Snackbar.LENGTH_LONG).show();
-            }
-
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                // Google Sign In was successful, authenticate with Firebase
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                //firebaseAuthWithGoogle(account);
-
-                Log.d("JKS", "Successfully " + account.getDisplayName());
-            } catch (ApiException e) {
-                // Google Sign In failed, update UI appropriately
-                Log.w("JKS", "Google sign in failed", e);
-                // ...
             }
         }
     }
@@ -219,9 +205,7 @@ public class ActivitySplash extends AppCompatActivity implements
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
-                        if (!task.isSuccessful()) {
-                            Snackbar.make(getWindow().getDecorView(), "Authentication failed.", Snackbar.LENGTH_LONG).show();
-                        } else {
+                        if (task.isSuccessful()) {
                             ref = FirebaseDatabase.getInstance().getReference(USERS_CHILD);
                             ref.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
@@ -248,6 +232,8 @@ public class ActivitySplash extends AppCompatActivity implements
 
                             startActivity(new Intent(ActivitySplash.this, ActivityMain.class));
                             finish();
+                        } else {
+                            Snackbar.make(getWindow().getDecorView(), "Authentication failed.", Snackbar.LENGTH_LONG).show();
                         }
                     }
                 });
