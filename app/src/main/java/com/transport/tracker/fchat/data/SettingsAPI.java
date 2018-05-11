@@ -23,6 +23,7 @@ public class SettingsAPI {
     }
 
     public String readSetting(String key) {
+
         return sharedSettings.getString(key, "na");
     }
 

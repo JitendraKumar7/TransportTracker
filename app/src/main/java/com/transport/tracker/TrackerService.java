@@ -22,6 +22,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.Manifest;
 import android.os.IBinder;
+import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
@@ -75,7 +76,7 @@ public class TrackerService extends Service {
         FirebaseAuth.getInstance().signInWithEmailAndPassword(
                 email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onComplete(Task<AuthResult> task) {
+            public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Log.d(TAG, "firebase auth success");
                     requestLocationUpdates();
